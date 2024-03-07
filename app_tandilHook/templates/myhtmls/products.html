@@ -1,0 +1,33 @@
+{% extends "myhtmls/base.html" %}
+
+{% block title %} Products || TANDILHOOK {% endblock %}
+
+{% block content %}
+{% load static %}
+<section class="ourproducts-section">
+    
+    <h2>Our products</h2>
+    
+    <div class="ourproducts-prodicons">
+        <div class="prodicons">
+            <a href="{% url 'lures' %}"><img src="{% static 'images/general/luresicon.png' %}" alt="Lures icon"></a>
+            <a href="{% url 'lures' %}">
+                <h2><span>Lure</span>s</h2>
+            </a>
+        </div>
+        <div class="prodicons">
+            <a href="{% url 'clothing' %}"><img src="{% static 'images/general/clothingicon.png' %}" alt="Clothing icon"></a>
+            <a href="{% url 'clothing' %}">
+                <h2><span>Clothin</span>g</h2>
+            </a>
+        </div>
+        <div class="prodicons">
+            <a href="{% url 'tools' %}"><img src="{% static 'images/general/toolsicon.png' %}" alt="Tools icon"></a>
+            <a href="{% url 'tools' %}">
+                <h2><span>Tool</span>s</h2>
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "myhtmls/base.html" %}
+
+{% block title %} Home || TANDILHOOK {% endblock %}
+
+{% block content %}
+{% load static %}
+    <section class="welcoming-main light-section">
+        <div class="greet">
+            <h1>Welcome to</h1>
+            
+            <img class="thname" src="{% static 'images/general/THname.png' %} " alt="TandilHook logo">
+            
+            <h3>A site made by people who love <span>fishing</span> to help others to keep doing our <span>passion</span>.<br>Come and join us!</h3>
+        </div>
+        <div class="st">
+            <h2>See our products</h2>
+        </div>
+        <div class="row container-prodicons">
+            <div class="col-4 prodicons">
+                <a href="{% url 'lures' %}"><img src="{% static 'images/general/luresicon.png' %}" alt="Lures icon"></a>
+                <a href="{% url 'lures' %}">
+                    <h2><span>Lure</span>s</h2>
+                </a>
+            </div>
+            <div class="col-4 prodicons">
+                <a href="{% url 'clothing' %}"><img src="{% static 'images/general/clothingicon.png' %}" alt="Clothing icon"></a>
+                <a href="{% url 'clothing' %}">
+                    <h2><span>Clothin</span>g</h2>
+                </a>
+            </div>
+            <div class="col-4 prodicons">
+                <a href="{% url 'tools' %}"><img src="{% static 'images/general/toolsicon.png' %}" alt="Tools icon"></a>
+                <a href="{% url 'tools' %}">
+                    <h2><span>Tool</span>s</h2>
+                </a>
+            </div>
+        </div>
+        <div class="welcoming-bottom d-flex align-items-center justify-content-center">
+            <div class="borderblack"></div>
+            <img src="{% static 'images/general/middleimg.png' %}" alt="">
+            <div class="bordergreen"></div>
+        </div>
+    </section>
+
+    <section class="sharing-more dark-section">
+        <div class="container">
+            <h2>Do you want to see a bit more of us?</h2>
+            <p>
+                If you want to see a little of <span>what we do</span> or maybe you need <span>help</span> achieving a goal, visit our YouTube Channel to see the videos we share.
+                <br>
+                <br>
+                Not only will you find guides to help you, but you will be able to see our adventures and <span>have fun with us</span>!
+                <br>
+                And if you have any questions because you don't know us yet, you will be able to <span>see our products</span> in action and see by yourself the <span>excellent quality</span> we offer you.
+            </p>
+        </div>
+    </section>
+
+{% endblock %}

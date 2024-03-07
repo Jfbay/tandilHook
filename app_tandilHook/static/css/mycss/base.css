@@ -1,0 +1,369 @@
+/*-------------------------------------- GENERAL STYLES --------------------------------------*/
+html {
+    background-color: rgb(251, 251, 251);
+    margin: 0px;
+}
+nav {
+    margin:0px;
+    padding: 0px;
+}
+h1 {
+    font-size: 3rem;
+    font-family: "Nova Mono", monospace;
+}
+h2 {
+    font-family: "Ysabeau SC", sans-serif;
+    font-size: 2rem;
+}
+h3 {
+    font-family: "Anek Telugu", sans-serif;
+    font-size: 1.5rem;
+}
+p {
+    font-size: 1.4rem;
+    font-family: "Hubballi", sans-serif;
+}
+button {
+    font-family: "Gruppo", sans-serif;
+}
+span {
+    color: rgb(108, 190, 97);;
+}
+a:link, a:visited, a:active {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+.dark-section {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+.light-section {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+nav ul li {
+    font-family: Gruppo, Arial, sans-serif;
+    font-size: 1.1rem;
+}
+
+/*------------------- NAVBAR -------------------*/
+.mynav {
+    background-color: rgb(251, 251, 251);
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    font-family: Gruppo, Arial, sans-serif;
+    font-weight: bold;
+}
+.mynav ul a {
+    padding: 0.8rem;
+    margin: 0;
+    transition: 0.5s;
+}
+.mynav ul a:hover {
+    transform: scale(1.05,1.05);
+    background-color: rgb(138, 211, 128);
+    color: rgb(251, 251, 251);
+}
+.mynav img {
+    transition: 0.5s;
+}
+.mynav img:hover {
+    transform: scale(1.08,1.08);
+}
+.userbtn-hidden {
+    display: none;
+}
+.userbtnbox {
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+}
+.userbtnbox ul {
+    list-style: none;
+}
+.userbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 5.5rem;
+
+}
+.userbtn a {
+    background-color: rgb(108, 190, 97); 
+    color: white;
+}
+
+
+/*------------------- NAVBAR DECO -------------------*/
+.topbar {
+    background-color: rgb(108, 190, 97);
+    height: 1.5rem;
+    top: 0;
+}
+.bordergreen {
+    background-color: rgb(108, 190, 97);
+    height: 0.8rem;
+    width: 100%;
+}
+.borderblack {
+    background-color: rgb(0, 0, 0);
+    height: 1rem;
+    margin: 0;
+    padding-left: 0px;
+    width: 100%;
+}
+
+/*------------------- CAROUSEL -------------------*/
+.carousel img {
+    height: 30rem;
+}
+
+/*----------- SECTIONS -----------*/
+.welcoming-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 20%;
+    text-align: center;
+}
+.ourproducts-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8%; 
+}
+.ourproducts-prodicons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+}
+
+/*-------------------------------------- HOME --------------------------------------*/
+
+/*----------- WELCOMING-MAIN -----------*/
+
+.st {
+    padding-top: 5%;
+}
+.welcoming-main h2, .ourproducts-section h2 {
+    font-weight: 700;
+    border-bottom: solid 0.2rem rgb(108, 190, 97);
+}
+.prodicons h2 {
+    transition: 0.2s;
+}
+.thname {
+    width: 50%;
+    padding: 5%;
+    padding-bottom: 10%;
+}
+.greet, .prodicons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+.container-pordicons, .prodicons img {
+    width: 60%;
+    padding-bottom: 3%;
+    transition: 0.3s;
+}
+.prodicons img:hover, .prodicons h2:hover {
+    transform: scale(1.1,1.1);
+}
+.welcoming-bottom, .welcoming-bottom img {
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+.welcoming-bottom img {
+    height: 20rem;
+}
+.welcoming-bottom {
+    flex-direction: column;
+    padding-top: 8%;
+}
+
+/*----------- SHARING MORE -----------*/
+.sharing-more {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 40%;
+    padding-top: 5%;
+    text-align: center;
+}
+.sharing-more h2 {
+    padding-bottom: 5%;
+}
+.container span {
+    color: rgb(138, 211, 128);
+}
+
+
+/*-------------------------------------- ABOUT US --------------------------------------*/
+.aboutus-section {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    min-height: 20%;
+    text-align: center;
+}
+
+.aboutus-section img {
+    margin: 7%;
+    width: 30%;
+}
+.aboutus-section .container {
+    margin-left: 3%;
+}
+
+
+/*-------------------------------------- PRODUCTS --------------------------------------*/
+
+.prodsection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.ourproducts-prodicons .prodicons img {
+    width: 20rem;
+}
+
+.add-section {
+    padding: 5%;
+}
+.btnmodify {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/*----------- LURES -----------*/
+
+
+
+
+/*-------------------------------------- CONTACT --------------------------------------*/
+.contacttext-section {
+    padding: 5%;
+}
+.contactform-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 5%;
+}
+.contactform-section textarea {
+    height: 10rem;
+    width: 100%;
+}
+.checkbtn {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 1.5rem;
+}
+.btnsend {
+    background-color: rgb(108, 182, 99);
+}
+.btndanger {
+    background-color: rgb(233, 76, 76);
+}
+.btnsend, .btndanger {
+    color: white;
+    border-radius: 6px;
+    border-style: none;
+    padding: 0.5rem;
+}
+
+
+
+
+/*-------------------------------------- RESPONSIVE --------------------------------------*/
+@media screen and (max-width: 767px) {
+    .carousel img, .welcoming-bottom img {
+        height: 10rem;
+    }
+    .navbar-brand {
+        display:none;
+    }
+    .lilmenu {
+        padding-top: 1.5rem;
+    }
+    
+    .userbtn-hidden {
+        background-color: rgb(107, 183, 97);
+        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .userbtn-hidden a {
+        color: white;
+        padding: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+    .userbtnbox {
+        display: none;
+    }
+    .topbar, .borderblack, .bordergreen {
+        height: 0.5rem;
+    }
+    .ourproducts-prodicons {
+        flex-direction: column;
+    }
+    .prodsection .table .thid, .prodsection .table .tdid {
+        display: none;
+    }
+    
+
+    .sharing-more .container h2 {
+        padding-top: 15%;
+        padding-bottom: 5%;
+    }
+    .aboutus-section {
+        flex-direction: column;
+        padding: 4%;
+    }
+    .contactform-section textarea {
+        height: 6rem;
+        width: 100%;
+    }
+
+
+}
+@media screen and (max-width: 1350px) {
+    .carousel, .welcoming-bottom{
+        width: 100%;
+    }
+    .userbtnbox {
+        flex-direction: column;
+        padding-right: 2rem;
+        width: 70px;
+    }
+    .userbtn {
+        width: 60px;
+    }
+    .prodsection .table .thimg, .prodsection .table .tdimg {
+        display: none;
+    }
+
+}

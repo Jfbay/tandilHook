@@ -1,0 +1,16 @@
+{% extends "myhtmls/base.html" %}
+
+{% block title %} Edit a product || TANDILHOOK {% endblock %}
+
+{% block content %}
+<section class="add-section light-section">
+    <div class="container">
+        <div class="card-body">
+            <h4 class="card-title">Edit product</h4>
+
+            {% include 'myhtmls\modifyproducts\form.html' %}
+
+        </div>
+    </div>
+</section>
+{% endblock %}

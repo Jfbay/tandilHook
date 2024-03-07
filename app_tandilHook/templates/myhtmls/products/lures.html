@@ -1,0 +1,47 @@
+{% extends "myhtmls/base.html" %}
+
+{% block title %} Lures || TANDILHOOK {% endblock %}
+
+{% block content %}
+{% load static %}
+
+<section class="prodsection light-section">
+    <div class="table-responsive">
+        <table class="table table-primary text-center">
+            <thead>
+                <tr>
+                    <th scope="col" class="thimg">Image</th>
+                    <th scope="col" class="thid">Lure id</th>
+                    <th scope="col">Lure</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Changes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for lure in lures %}
+                <tr>
+                    <td class="tdimg">
+                        <img src="{{ lure.image.url }}" height="100">
+                    </td>
+                    <td class="tdid">{{ lure.id }}</td>
+                    <td>{{ lure.name }}</td>
+                    <td>{{ lure.type }}</td>
+                    <td>{{ lure.price }}</td>
+                    <td class="btnmodify">
+                        <a name="" id="" class="btnsend" href="{% url 'editlure' lure.id %}" role="button">Edit</a>
+                        <a name="" id="" class="btndanger" href="{% url 'deletelure' lure.id %}" role="button">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a name="" id="" class="btnsend" href="{% url 'addlure' %}" role="button">Add lure</a>
+        
+    </div>
+
+</section>
+
+{% endblock %}

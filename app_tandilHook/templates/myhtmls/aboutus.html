@@ -1,0 +1,18 @@
+{% extends "myhtmls/base.html" %}
+
+{% block title %} About Us || TANDILHOOK {% endblock %}
+
+{% block content %}
+{% load static %}
+
+<section class="aboutus-section dark-section">
+    <img src="{% static 'images/aboutus/aboutus1.png' %}" alt="aboutus image1">
+    <div class="container">
+        <h2>Who is behind Tandil Hook?</h2>
+        <p>
+            We create this amazing fishing group back in 2016, in Tandil city. We believe doing what you love is the main reason why we are alive, so we are comitted to help anyone who shares the same passion we have for fishing.
+        </p>
+    </div>
+</section>
+
+{% endblock %}

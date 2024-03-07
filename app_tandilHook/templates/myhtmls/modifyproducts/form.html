@@ -1,0 +1,26 @@
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    {% for data in productform %}
+            <div class="mb-3">
+                <label for="" class="form-label">{{ data.label }}</label>
+
+                {% if data.field.widget.input_type == 'file' and data.value %}
+                <br/>
+                <img src="{{MEDIA_URL}}/images/{{data.value}}" width="100" alt="">
+                {% endif %}
+    
+                <input
+                type="{{ data.field.widget.input_type }}"
+                class="form-control"
+                name="{{ data.name }}"
+                id=""
+                placeholder="{{ data.label }}"
+                value="{{ data.value | default:'' }}"
+                />
+            </div>
+            <div class="col-12 help-text">{{data.error}}</div>
+        {% endfor %}
+            <input class="btnsend" type="submit" value="Send">
+            <a class="btndanger" href="{% url 'products' %}">Cancel</a>
+            
+    </form> 

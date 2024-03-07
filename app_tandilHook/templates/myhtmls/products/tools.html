@@ -1,0 +1,46 @@
+{% extends "myhtmls/base.html" %}
+
+{% block title %} Tool || TANDILHOOK {% endblock %}
+
+{% block content %}
+{% load static %}
+
+<section class="prodsection light-section">
+    <div class="table-responsive">
+        <table class="table table-primary">
+            <tr>
+                <th scope="col">Image</th>
+                <th scope="col">Tool id</th>
+                <th scope="col">Tool</th>
+                <th scope="col">Type</th>
+                <th scope="col">Price</th>
+                <th scope="col">Changes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tool in tools %}
+            <tr>
+                <td>
+                    <img src="{{ tool.image.url }}" height="100">
+                </td>
+                <td>{{ tool.id }}</td>
+                <td>{{ tool.name }}</td>
+                <td>{{ tool.type }}</td>
+                <td>{{ tool.price }}</td>
+                <td class="btnmodify">
+                    <a name="" id="" class="btnsend" href="{% url 'edittool' tool.id %}" role="button">Edit</a>
+                    <a name="" id="" class="btndanger" href="{% url 'deletetool' tool.id %}" role="button">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div>
+    <a name="" id="" class="btnsend" href="{% url 'addlure' %}" role="button">Add lure</a>
+    
+</div>
+
+</section>
+
+{% endblock %}

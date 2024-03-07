@@ -1,0 +1,49 @@
+{% extends "myhtmls/base.html" %}
+
+{% block title %} Clothing || TANDILHOOK {% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<section class="prodsection light-section">
+    <div class="table-responsive">
+        <table class="table table-primary">
+            <thead>
+                <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Clothing id</th>
+                    <th scope="col">Clothing</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Size</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Changes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cloth in clothing %}
+                <tr>
+                    <td>
+                        <img src="{{ cloth.image.url }}" height="100">
+                    </td>
+                    <td>{{ cloth.id }}</td>
+                    <td>{{ cloth.name }}</td>
+                    <td>{{ cloth.type }}</td>
+                    <td>{{ cloth.size }}</td>
+                    <td>{{ cloth.price }}</td>
+                    <td class="btnmodify">
+                        <a name="" id="" class="btnsend" href="{% url 'editcloth' cloth.id %}" role="button">Edit</a>
+                        <a name="" id="" class="btndadnger" href="{% url 'deletecloth' cloth.id %}" role="button">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a name="" id="" class="btnsend" href="{% url 'addlure' %}" role="button">Add lure</a>
+        
+    </div>
+</section>
+
+{% endblock %}

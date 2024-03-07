@@ -1,0 +1,49 @@
+{% extends "myhtmls/base.html" %}
+
+{% block title %} Contact us || TANDILHOOK {% endblock %}
+
+{% block content %}
+
+<section class="container contacttext-section light-section">
+    <div>                    
+        <h2>Do you need anything?</h2>
+        <p>If you are experiencing any trouble with our web and your doubt isn't answered in our FAQ section, please, write to us and we'll contact you as soon as posible!</p>
+    </div>
+    <div>
+        <h2>Would you like a particular product and you don't see it in our web?</h2>
+        <p>We love to bring you all you need for keep doing what we love, so please, let us know if you have a special request you'd like to ask and we will put hands to work to see it done!</p>               
+    </div>
+</section>
+
+<section class="container contactform-section light-section">
+    <form>
+        <div class="container">
+            <div>
+                <input type="text" name="name-contactform" placeholder="Name">
+                <input type="text" name="name-contactform" placeholder="E-mail">
+            </div>
+            <div class="btn-group" data-bs-toggle="buttons">
+                <label class="checkbtn">
+                    <input type="checkbox" class="me-2" name="" id="checkhelp" checked autocomplete="off"/>
+                    I need help
+                </label>
+                <label class="checkbtn">
+                    <input type="checkbox" class="me-2" name="" id="checkrequest" autocomplete="off"/>
+                    I would like to ask for something
+                </label>
+            </div>
+            
+            <div class="msg">
+                <textarea name="text" placeholder="Write your message for us"></textarea>
+            </div>
+    
+    
+            <div class="btn-contact">
+                <button type="submit" class="btnsend">Send</button>
+                <button type="reset" class="btndanger">Delete</button>
+            </div>
+        </div>
+    </form>
+</section>
+
+{% endblock %}
