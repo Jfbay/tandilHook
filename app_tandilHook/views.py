@@ -50,14 +50,10 @@ def createUser(request):
     data = {
         'form': RegisterForm()
     }
-    print('DATA>>>>>>>>>>>>>>>>>', data)
     if request.method == 'POST':
         form = RegisterForm(request.POST)
-        print('LLEGAMOS A ARMAR EL FORM')
         if form.is_valid():
-            print('EL FORM ES VALIDO')
             form.save()
-            print('SE GUARDO EL FORM EL FORM')
             user = authenticate(username=form.cleaned_data["username"], password=form.cleaned_data["password1"])
             login(request, user)
             return redirect('home')
