@@ -22,6 +22,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@742&family=Gruppo&family=Hubballi&family=Nova+Mono&family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Ysabeau+SC:wght@1..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@742&family=Gruppo&family=Hubballi&family=Nova+Mono&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Ysabeau+SC:wght@1..1000&display=swap" rel="stylesheet">
 
     <title>{% block title %}  {% endblock %}</title>
 </head>
@@ -29,34 +32,35 @@
     <!-- NAVBAR -->
     <nav class="mynav navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'images/general/THlogogreen.png' %}" height="80px" alt=""></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/general/THlogogreen.png' %}" height="80px" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse lilmenu" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="">
-                        <a class="" href="{% url 'index' %}">Home</a>
+                    <li>
+                        <a href="{% url 'home' %}">Home</a>
                     </li>
-                    <li class="">
-                        <a class="" href="{% url 'aboutus' %}">About us</a>
+                    <li>
+                        <a href="{% url 'aboutus' %}">About us</a>
                     </li>
-                    <li class="">
-                        <a class="" href="{% url 'products' %}">Products</a>
+                    <li>
+                        <a href="{% url 'products' %}">Products</a>
                     </li>
-                    <li class="">
-                        <a class="" href="{% url 'contactus' %}">Contact us</a>
+                    <li>
+                        <a href="{% url 'contactus' %}">Contact us</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="userbtn-hidden">
-                        <a class="" href="">Log out</a>
-                    </li>
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="userbtn-hidden lbtns">Log out</button>
+                    </form>
                     {% else %}
                     <li class="userbtn-hidden">
-                        <a href="">Log in</a>
+                        <a href="{% url 'login' %}">Log in</a>
                     </li>
                     <li class="userbtn-hidden">
-                        <a class="" href="">Sign up</a>
+                        <a href="{% url 'signin' %}">Sign up</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -65,8 +69,11 @@
                 <ul>
                     {% if user.is_authenticated %}
                     <div>
-                        <li class="userbtn">
-                            <a class="userbtn" href="">Log out</a>
+                        <li>
+                            <form method="post" action="{% url 'logout' %}">
+                                {% csrf_token %}
+                                <button type="submit" class="lbtns">Log out</button>
+                            </form>
                         </li>
                         <li class="navgreet">
                             <p>Welcome, <span>{{ user.username }}</span>!</p>
@@ -75,10 +82,10 @@
                     {% else %}
                     <div class="row d-flex">
                         <li class="col userbtn">
-                            <a href="">Log in</a>
+                            <a href="{% url 'login' %}">Log in</a>
                         </li>
                         <li class="col userbtn">
-                            <a class="userbtn" href="">Sign up</a>
+                            <a class="userbtn" href="{% url 'signin' %}">Sign up</a>
                         </li>
                     </div>
                     {% endif %}

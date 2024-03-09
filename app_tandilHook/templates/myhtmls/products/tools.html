@@ -1,46 +1,34 @@
 {% extends "myhtmls/base.html" %}
 
-{% block title %} Tool || TANDILHOOK {% endblock %}
+{% block title %} Lures || TANDILHOOK {% endblock %}
 
 {% block content %}
 {% load static %}
 
-<section class="prodsection light-section">
-    <div class="table-responsive">
-        <table class="table table-primary">
-            <tr>
-                <th scope="col">Image</th>
-                <th scope="col">Tool id</th>
-                <th scope="col">Tool</th>
-                <th scope="col">Type</th>
-                <th scope="col">Price</th>
-                <th scope="col">Changes</th>
-            </tr>
-        </thead>
-        <tbody>
+<section class="clientprod-section light-section d-flex justify-content-center">
+    <div class="prodblocks">
             {% for tool in tools %}
-            <tr>
-                <td>
-                    <img src="{{ tool.image.url }}" height="100">
-                </td>
-                <td>{{ tool.id }}</td>
-                <td>{{ tool.name }}</td>
-                <td>{{ tool.type }}</td>
-                <td>{{ tool.price }}</td>
-                <td class="btnmodify">
-                    <a name="" id="" class="btnsend" href="{% url 'edittool' tool.id %}" role="button">Edit</a>
-                    <a name="" id="" class="btndanger" href="{% url 'deletetool' tool.id %}" role="button">Delete</a>
-                </td>
-            </tr>
+            <div class="myproduct">
+                <p class="pname">{{ tool.name }}</p>
+                <img src="{{ tool.image.url }}" alt="tool image">
+                <p class="ptype">Type: {{ tool.type }} - Sizes: {{ tool.type }}</p>
+                <p class="pdesc">{{ tool.description }}</p>
+                <p class="pprice">${{ tool.price }}</p>
+                {% if perms.app_tandilHook.change_tool %}
+                <div>
+                    <a class="btnsend" href="{% url 'edittool' tool.id %}" role="button">Edit</a>
+                    <a class="btndanger" href="{% url 'deletetool' tool.id %}" role="button">Delete</a>
+                </div>
+                {% endif %}
+            </div>
             {% endfor %}
-        </tbody>
-    </table>
-</div>
-<div>
-    <a name="" id="" class="btnsend" href="{% url 'addlure' %}" role="button">Add lure</a>
-    
-</div>
-
+    </div>
+    {% if perms.app_tandilHook.change_tool %}
+    <div class="container d-flex justify-content-end">
+        <a class="btnsend" href="{% url 'addtool' %}">Add new product</a>
+    </div>
+    {% endif %}
+   
 </section>
 
 {% endblock %}

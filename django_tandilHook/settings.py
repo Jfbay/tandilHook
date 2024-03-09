@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# I changed the redirect rout after login / logout
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Application definition
 
@@ -37,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app_tandilHook'
+    'app_tandilHook',
 ]
 
 MIDDLEWARE = [
@@ -126,6 +129,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'app_tandilHook/static'),)
 # Rute to the media in our database
 MEDIA_ROOT = os.path.join(BASE_DIR, '')
 MEDIA_URL = '/images/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

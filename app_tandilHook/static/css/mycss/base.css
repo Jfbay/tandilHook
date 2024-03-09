@@ -45,6 +45,13 @@ nav ul li {
     font-family: Gruppo, Arial, sans-serif;
     font-size: 1.1rem;
 }
+.dark-background {
+    background-color: rgb(0, 0, 0);
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    
+}
 
 /*------------------- NAVBAR -------------------*/
 .mynav {
@@ -94,6 +101,13 @@ nav ul li {
     background-color: rgb(108, 190, 97); 
     color: white;
 }
+.lbtns {
+    background-color: rgb(138, 211, 128);
+    padding-inline: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+}
 
 
 /*------------------- NAVBAR DECO -------------------*/
@@ -119,6 +133,56 @@ nav ul li {
 .carousel img {
     height: 30rem;
 }
+
+/*------------------- USERS -------------------*/
+.register-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+.registerformbox {
+    padding-bottom: 10%;
+     height: 100%;
+}
+.registerformbox div {
+    display: flex;
+    width: 30rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    font-family: "Gruppo", sans-serif;
+    font-size: 1.2rem;
+}
+.registerformbox .helptext {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 0.8rem;
+    color: white;
+}
+.register-section ul {
+    list-style: none;
+}
+.rform {
+    padding-bottom: 8%;
+}
+.register-section .lbtns {
+    color: white;
+    font-weight: 400;
+    margin-top: 2rem;
+    padding: 0.5rem;
+    padding-inline: 0.8rem;
+}
+.register-section p {
+    font-size: 1.2rem;
+}
+.register-section .userbtn {
+    background-color: rgb(138, 211, 128);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
 
 /*----------- SECTIONS -----------*/
 .welcoming-main {
@@ -251,15 +315,75 @@ nav ul li {
     align-items: center;
     justify-content: space-around;
 }
+.clientprod-section {
+    width: 100%;
+    min-height: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-/*----------- LURES -----------*/
+.prodblocks {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 5%;
+}
+.prodblocks a {
+    color: white;
+}
+.myproduct {
+    width: 25rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Roboto Condensed", sans-serif;
+    padding: 1rem;
+    border: solid 1px rgb(46, 46, 46);
+    border-radius: 3px;
+}
+.myproduct p {
+    font-family: "Roboto Condensed", sans-serif; 
+    font-weight: 300;
+}
+.myproduct img {
+    width: 120px;
+    height: 120px;
+    padding: 0.8rem;
+}
+.myproduct .pname {
+    width: 100%;
+    font-weight: 600;
+    font-family: "Roboto Condensed", sans-serif;
+    padding-bottom: 0.5rem;
+    border-bottom: solid 2px rgb(107, 183, 97);
+}
+.myproduct .pprice {
+    width: 100%;
+    font-weight: 500;
+    padding-top: 0.5rem;
+    border-top: solid 2px rgb(107, 183, 97);
+}
+.myproduct .ptype {
+    font-size: 0.9rem;
+}
+.myproduct .pdesc {
+    font-size: 1.2rem;
+}
+
 
 
 
 
 /*-------------------------------------- CONTACT --------------------------------------*/
 .contacttext-section {
-    padding: 5%;
+    padding: 4%;
 }
 .contactform-section {
     display: flex;
@@ -275,12 +399,13 @@ nav ul li {
     width: 100%;
 }
 .checkbtn {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     padding: 1.5rem;
 }
 .btnsend {
     background-color: rgb(108, 182, 99);
+    color: white;
 }
 .btndanger {
     background-color: rgb(233, 76, 76);

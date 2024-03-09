@@ -1,25 +1,29 @@
 from django.conf import settings
 from django.contrib.staticfiles.urls import static
 
+
 from django_tandilHook.urls import path
 from . import views
 
 urlpatterns = [
 
     # SITE -----------------//////////////////////////
-    path('base', views.base, name='base'),
-    path('index', views.index, name='index'),
-    path('aboutus', views.aboutUs, name='aboutus'),
-    path('products', views.products, name='products'),
-    path('contactus', views.contactUs, name='contactus'),
+    path('', views.home, name='home'),
+    path('aboutus/', views.aboutUs, name='aboutus'),
+    path('products/', views.products, name='products'),
+    path('contactus/', views.contactUs, name='contactus'),
+    # SITE -----------------//////////////////////////,
+    path('loginhtml/', views.loginhtml, name='loginhtml'),
+    path('logout/', views.logoutuser, name='logout'),
+    path('registration/', views.createUser, name='signin'),
     # PRODUCTS -----------------//////////////////////////
-    path('lures', views.lures, name='lures'),
-    path('clothing', views.clothing, name='clothing'),
-    path('tools', views.tools, name='tools'),
+    path('lures/', views.lures, name='lures'),
+    path('clothing/', views.clothing, name='clothing'),
+    path('tools/', views.tools, name='tools'),
     #-----------ADD
-    path('addlure', views.addLure, name='addlure'),
-    path('addcloth', views.addCloth, name='addcloth'),
-    path('addtool', views.addTool, name='addtool'),
+    path('addlure/', views.addLure, name='addlure'),
+    path('addcloth/', views.addCloth, name='addcloth'),
+    path('addtool/', views.addTool, name='addtool'),
     #-----------EDIT
     path('editlure/<int:id>', views.editLure, name='editlure'),
     path('editcloth/<int:id>', views.editCloth, name='editcloth'),
